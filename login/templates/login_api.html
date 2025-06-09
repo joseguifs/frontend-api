@@ -1,0 +1,13 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="username" placeholder="Usuário">
+    <input name="password" type="password" placeholder="Senha">
+    <button type="submit">Entrar</button>
+    {% if error %}<p>{{ error }}</p>{% endif %}
+    <div>
+      <p>
+        <a href="{% url 'recuperar-senha' %}">Esqueceu a senha?</a>
+      </p>
+    </div>
+</form>
+  

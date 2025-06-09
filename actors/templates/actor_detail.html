@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Gênero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .value {
+            margin-bottom: 15px;
+        }
+
+        .not-found {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalhes do Autor</h1>
+
+    {% if actor %}
+        <div class="container">
+            <p><span class="label">ID:</span> {{ actor.id }}</p>
+            <p><span class="label">Nome:</span> {{ actor.name }}</p>
+            <p><span class="label">Livros:</span> {{ actor.actor_for_genre }}</p>
+            <p><span class="label">Nacionalidade:</span> {{ actor.nationality }}</p>
+            <p><span class="label">Data de Nascimento:</span> {{ actor.date_birth }}</p>
+
+
+        </div>
+    {% else %}
+        <p class="not-found">Autor não encontrado.</p>
+    {% endif %}
+
+</body>
+</html>

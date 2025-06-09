@@ -1,0 +1,13 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="username" placeholder="Digite seu username">
+    <input name="email" placeholder="Digite seu email de recuperação">
+    <p>
+        <a>
+            Enviaremos um email de recuperação
+        </a>
+    </p>
+    <button type="submit">Enviar</button>
+    {% if error %}<p>{{ error }}</p>{% endif %}
+    
+  </form>
